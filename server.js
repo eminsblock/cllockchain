@@ -11,11 +11,11 @@ server.use(express.json())
 server.get('/', (req, res) => {
     const data = req.body
     
-    if(!data){
+    console.log(data)
+    if(Object.keys(data).length>0){
         res.status(200).json({
             message: "We FART"
         })
-        console.log(data);
     }else{
         res.status(400).json({message: "Sorry, we couldn't FART"})
     }
